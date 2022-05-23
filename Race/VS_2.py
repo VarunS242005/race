@@ -21,13 +21,13 @@ game_folder= os.path.dirname(__file__)
 image_folder= os.path.join(game_folder,'img')# a variable for image , this will allow the game to work in any os
 
 
-ri=pygame.image.load('E:/Race/R.jpg')
+ri=pygame.image.load(r'Race/R.jpg')
 ri=pygame.transform.scale(ri,(1500,100))
 def r(x,y):
 	w.blit(ri,(x,y))
 
 #crash image
-c_image=pygame.image.load('E:/Race/c.png')
+c_image=pygame.image.load(r'Race/c.png')
 c_image=pygame.transform.scale(c_image,(340,340))
 cx=900
 cy=100
@@ -35,28 +35,28 @@ def c(x,y):
 	w.blit(c_image,(x,y))
 
 #icon for main screen
-back_image=pygame.image.load('E:/Race/back.png')
+back_image=pygame.image.load(r'Race/back.png')
 bx=300
 by=-50
 def i(x,y):
 	w.blit(back_image,(x,y))
 
 #player
-p_image=pygame.image.load('E:/Race/car.png')
+p_image=pygame.image.load(r'Race/car.png')
 p_image=pygame.transform.scale(p_image,(470,470))
 pimage = p_image.get_rect()
 def player(x,y):
 	w.blit(p_image,(x,y))
 
 #obstacle
-o_image=pygame.image.load('E:/Race/barricade_2.png')
+o_image=pygame.image.load(r'Race/barricade_2.png')
 o_image=pygame.transform.scale(o_image,(460,460))
 oimage=o_image.get_rect()
 def o(x,y):
 	w.blit(o_image,(x,y))
 
 #icon for second page
-h=pygame.image.load('E:/Race/hpr.png')
+h=pygame.image.load(r'Race/hpr.png')
 h=pygame.transform.scale(h,(380,240))
 hx=530
 hy=280
@@ -70,12 +70,12 @@ def screen_text1(text,color,x ,y):
 	w.blit(screen_text1,(x,y))
 
 #font medium
-font2=pygame.font.Font('E:/Race/kenvector_future_thin.ttf',30)
+font2=pygame.font.Font(r'Race/kenvector_future_thin.ttf',30)
 def screen_text2(text,color,x ,y):
 	screen_text2=font2.render(text,True,color)
 	w.blit(screen_text2,(x,y))
 
-font3=pygame.font.Font('E:/Race/kenvector_future_thin.ttf',25)
+font3=pygame.font.Font(r'Race/kenvector_future_thin.ttf',25)
 def screen_text3(text,color,x ,y):
 	screen_text3=font3.render(text,True,color)
 	w.blit(screen_text3,(x,y))
@@ -123,7 +123,7 @@ def rules():
 		pygame.display.update()
 
 def crash():
-	with open('C:/Race/untitled2.txt','r') as f:
+	with open(r'Race/untitled2.txt','r') as f:
 		hiscore=f.read()
 	w.fill((255,255,255))
 	screen_text1('CRASH!',(0,0,255),590,100)
@@ -155,7 +155,7 @@ def home1():
 		pygame.display.update()
 def home2():
 	exit_game=False
-	pygame.mixer.music.load('E:/Race/sad.mp3')
+	pygame.mixer.music.load(r'Race/sad.mp3')
 	pygame.mixer.music.play(-1)
 	while not exit_game:
 		w.fill((0,255,0))
@@ -202,7 +202,7 @@ def game_loop():
 	#collide=pygame.Rect.colliderect(pimage,oimage,True)
 	#pygame.mixer.music.load('E:/Race/bm.mp3')
 	#pygame.mixer.music.play(-1)
-	with open('E:/Race/untitled2.txt','r') as f:
+	with open(r'Race/untitled2.txt','r') as f:
 		hiscore=f.read()
 	while not exit_game1:
 		if game_over:
